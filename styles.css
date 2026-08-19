@@ -3579,3 +3579,124 @@ section.hero .float-card{
     max-width:min(270px,84vw) !important;
   }
 }
+
+
+/* =======================================================================
+   SECTION UPDATE — transparent company logos, featured PM card,
+   Team Monojog/new certificate assets
+   ======================================================================= */
+
+/* Exact supplied logos already contain transparency; remove the old white tile. */
+#experience .role-brand .logo{
+  width:82px !important;
+  height:58px !important;
+  padding:0 !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  overflow:visible !important;
+}
+
+#experience .role-brand .logo img{
+  width:100% !important;
+  height:100% !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+  background:transparent !important;
+}
+
+/* Give the Prime Minister engagement more visual prominence. */
+#representation .rep-track.auto-track .rep-card.rep-card-featured{
+  flex-basis:min(610px,92vw) !important;
+  border-color:rgba(240,201,110,.35) !important;
+  box-shadow:0 20px 55px rgba(0,0,0,.18) !important;
+}
+
+#representation .rep-card.rep-card-featured img{
+  width:100% !important;
+  height:370px !important;
+  aspect-ratio:auto !important;
+  object-fit:cover !important;
+  object-position:center center !important;
+}
+
+#representation .rep-card.rep-card-featured .rep-copy{
+  padding:22px 23px !important;
+}
+
+#representation .rep-card.rep-card-featured .rep-copy h3{
+  font-size:24px !important;
+}
+
+/* Keep newly supplied Team Monojog image visually balanced. */
+#ventures img[src$="team-monojog-new.png"]{
+  object-fit:cover !important;
+  object-position:center center !important;
+}
+
+/* New vertical University Activation certificate: show the complete document. */
+#credentials img[src$="university-activation-certificate-new.png"]{
+  object-fit:contain !important;
+  object-position:center center !important;
+}
+
+/* Responsive adjustments */
+@media(max-width:860px){
+  #experience .role-brand .logo{
+    width:74px !important;
+    height:52px !important;
+  }
+
+  #representation .rep-track.auto-track .rep-card.rep-card-featured{
+    flex-basis:min(500px,90vw) !important;
+  }
+
+  #representation .rep-card.rep-card-featured img{
+    height:310px !important;
+  }
+}
+
+@media(max-width:580px){
+  #experience .role-brand .logo{
+    width:68px !important;
+    height:48px !important;
+  }
+
+  #representation .rep-track.auto-track .rep-card.rep-card-featured{
+    flex-basis:92vw !important;
+  }
+
+  #representation .rep-card.rep-card-featured img{
+    height:250px !important;
+  }
+
+  #representation .rep-card.rep-card-featured .rep-copy h3{
+    font-size:21px !important;
+  }
+}
+
+
+/* =======================================================================
+   ACADEMIC + REPRESENTATION SECTION START FIX
+   Ensures anchor navigation opens from the true section heading, not midway.
+   ======================================================================= */
+
+#academic-awards,
+#representation{
+  content-visibility:visible !important;
+  contain-intrinsic-size:auto !important;
+  scroll-margin-top:86px !important;
+}
+
+#academic-awards .academic-grid,
+#representation .rep-track{
+  scroll-behavior:smooth;
+}
+
+/* The first item is the visual starting point when each gallery opens. */
+#academic-awards .academic-grid > :first-child,
+#representation .rep-track > :first-child{
+  scroll-snap-align:start !important;
+}

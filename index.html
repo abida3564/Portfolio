@@ -8,7 +8,7 @@
 <meta name="color-scheme" content="dark light"/>
 <title>Fahima Abida Chowdhury — Portfolio | COO · CSE · Innovation &amp; Accessibility</title>
 <meta content="Fahima Abida Chowdhury — B.Sc. in CSE at UITS, Chief Operating Officer at Sound Vision; portfolio covering leadership, innovation awards, academic distinctions, startup programs, high-level representation, certificates and accessibility research." name="description"/>
-<script>(function(){try{const saved=localStorage.getItem('fac-theme');const system=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.dataset.theme=saved||system}catch(e){document.documentElement.dataset.theme='dark'}})();</script>
+<script>(function(){try{const saved=localStorage.getItem('fac-theme-v2');document.documentElement.dataset.theme=saved||'dark'}catch(e){document.documentElement.dataset.theme='dark'}})();</script>
 <link href="styles.css" rel="stylesheet"/></head>
 <body>
 <div class="progress" id="progress"></div>
@@ -29,7 +29,7 @@
 
 </a>
 </div>
-</div><div class="portrait-wrap"><span class="hero-petal petal-6"></span><span class="hero-petal petal-5"></span><span class="hero-petal petal-4"></span><span class="hero-petal petal-3"></span><span class="hero-petal petal-2"></span><span class="hero-petal petal-1"></span><div class="portrait"><img alt="Fahima Abida Chowdhury" decoding="async" loading="eager" src="assets/image-01-c9eea8b1b652.png"/ width="539" height="601" fetchpriority="high"></div><div class="float-card"><small>Current role</small><b>Chief Operating Officer</b><span>Sound Vision · Assistive Technology</span></div></div></div></section>
+</div><div class="portrait-wrap"><span class="hero-petal petal-6"></span><span class="hero-petal petal-5"></span><span class="hero-petal petal-4"></span><span class="hero-petal petal-3"></span><span class="hero-petal petal-2"></span><span class="hero-petal petal-1"></span><div class="portrait"><img alt="Fahima Abida Chowdhury" decoding="async" loading="eager" fetchpriority="high" src="assets/formal-hero.png" width="880" height="1135"/></div><div class="float-card"><small>Current role</small><b>Chief Operating Officer</b><span>Sound Vision · Assistive Technology</span></div></div></div></section>
 <div class="stats"><div class="container stats-grid"><div class="stat"><b>COO</b><span>Operations &amp; professional leadership</span></div><div class="stat"><b>4+</b><span>National honors &amp; awards</span></div><div class="stat"><b>CSE</b><span>Academic foundation at UITS</span></div><div class="stat"><b>1</b><span>Accessibility-focused scholarly publication</span></div></div></div>
 <section><div class="container reveal"><div class="section-head"><div><div class="kicker">01 · Storyline</div><h2>A portfolio built as a journey.</h2></div><p>Rather than a long résumé page, the experience is organized around the roles I play: engineer, operator, team leader, award-winning innovator, ecosystem participant, representative, researcher, and person beyond work.</p></div><div class="journey"><article><small>01</small><b>Academic Foundation</b><span>B.Sc. CSE · UITS</span></article><article><small>02</small><b>Engineering</b><span>AI Lab Bangladesh</span></article><article><small>03</small><b>COO Leadership</b><span>Sound Vision</span></article><article><small>04</small><b>Recognition</b><span>Awards &amp; grants</span></article><article><small>05</small><b>Representation</b><span>National &amp; international</span></article><article><small>06</small><b>Research</b><span>Accessibility &amp; Agentic AI</span></article></div></div></section>
 <section id="experience"><div class="container reveal"><div class="section-head"><div><div class="kicker">02 · Professional Journey</div><h2>From engineering practice to operating leadership.</h2></div><p>My career progression combines technical foundations with organizational execution, stakeholder management, partnerships, public representation, and team coordination.</p></div><div class="timeline"><article class="role"><div class="role-time">2025 — Present</div><div><div class="role-top"><div><div class="role-brand"><div class="logo"><img alt="Sound Vision logo" src="assets/image-02-fee9a30eb3b8.png"/ width="1196" height="171" loading="lazy" decoding="async" fetchpriority="low"></div><div><h3>Chief Operating Officer</h3><div class="org">Sound Vision</div></div></div></div></div><ul><li>Direct business operations, corporate governance, coordination, and strategic execution.</li><li>Manage relationships across government, ICT stakeholders, investors, NGOs, development partners, and the startup ecosystem.</li><li>Represent assistive-technology products at innovation exhibitions, startup programs, and official engagements.</li><li>Coordinate cross-functional teams around product, strategy, partnerships, and public-facing execution.</li></ul></div></article><article class="role"><div class="role-time">Jun 2025 — Jan 2026</div><div><div class="role-brand"><div class="logo"><img alt="AI Lab Bangladesh logo" src="assets/image-03-decb4e1de4af.png"/ width="1038" height="488" loading="lazy" decoding="async" fetchpriority="low"></div><div><h3>Assistant Engineer, Intern</h3><div class="org">AI Lab Bangladesh</div></div></div><ul><li>Collected, curated, and annotated structured computer-vision datasets for machine-learning applications.</li><li>Supported model testing, evaluation, and technical documentation with senior engineers.</li></ul></div></article></div>
@@ -148,7 +148,7 @@ const lb=document.getElementById('lightbox'),lbi=document.getElementById('lightb
   const icon=btn.querySelector('.theme-icon'),label=btn.querySelector('.theme-label');
   function apply(theme){
     document.documentElement.dataset.theme=theme;
-    try{localStorage.setItem('fac-theme',theme)}catch(e){}
+    try{localStorage.setItem('fac-theme-v2',theme)}catch(e){}
     const light=theme==='light';
     if(icon)icon.textContent=light?'☾':'☀';
     if(label)label.textContent=light?'Night':'Day';
@@ -188,4 +188,5 @@ const lb=document.getElementById('lightbox'),lbi=document.getElementById('lightb
   start();
 });
 </script>
-</body></html>
+</body>
+</html>

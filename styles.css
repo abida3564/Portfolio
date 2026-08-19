@@ -3147,3 +3147,435 @@ section.hero .float-card{
   section.hero .portrait-wrap::after{left:51% !important;top:108px !important;width:240px !important;height:240px !important}
   section.hero .float-card{right:0 !important;bottom:8px !important}
 }
+
+
+/* ========================================================================
+   HERO PORTRAIT — single continuous exact supplied image (no seam).
+   The decorative circular frame sits behind the portrait. The portrait itself
+   remains one transparent layer, so the head can extend above the circle while
+   the lower body visually sits within/over the frame.
+   ======================================================================== */
+section.hero .portrait-wrap{
+  --hero-photo-w: 405px;
+  --hero-photo-h: 540px;
+  --hero-ring: 338px;
+  --hero-ring-top: 175px;
+  position:relative !important;
+  width:500px !important;
+  height:550px !important;
+  overflow:visible !important;
+  background:none !important;
+}
+
+section.hero .portrait.hero-portrait-single{
+  position:absolute !important;
+  left:51% !important;
+  top:0 !important;
+  width:var(--hero-photo-w) !important;
+  height:var(--hero-photo-h) !important;
+  transform:translateX(-50%) !important;
+  overflow:visible !important;
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  background:transparent !important;
+  margin:0 !important;
+  aspect-ratio:auto !important;
+  z-index:4 !important;
+}
+
+section.hero .portrait-single-img{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:none !important;
+  object-fit:contain !important;
+  object-position:center bottom !important;
+  background:transparent !important;
+  filter:none !important;
+}
+
+/* Smaller circular tech frame behind the lower portrait. */
+section.hero .portrait-wrap::before{
+  content:"" !important;
+  position:absolute !important;
+  left:51% !important;
+  top:var(--hero-ring-top) !important;
+  width:var(--hero-ring) !important;
+  height:var(--hero-ring) !important;
+  transform:translateX(-50%) !important;
+  border-radius:50% !important;
+  border:1px solid rgba(104,225,190,.34) !important;
+  background:radial-gradient(circle at 50% 52%,rgba(104,225,190,.12),rgba(104,225,190,.035) 58%,transparent 59%) !important;
+  box-shadow:0 0 0 22px rgba(104,225,190,.025), inset 0 0 60px rgba(104,225,190,.035) !important;
+  z-index:1 !important;
+  pointer-events:none !important;
+}
+section.hero .portrait-wrap::after{
+  content:"" !important;
+  position:absolute !important;
+  left:51% !important;
+  top:calc(var(--hero-ring-top) - 10px) !important;
+  width:calc(var(--hero-ring) + 20px) !important;
+  height:calc(var(--hero-ring) + 20px) !important;
+  transform:translateX(-50%) !important;
+  border-radius:50% !important;
+  border:1px solid rgba(104,225,190,.13) !important;
+  background:transparent !important;
+  z-index:0 !important;
+  pointer-events:none !important;
+}
+
+section.hero .float-card{
+  z-index:8 !important;
+  right:-8px !important;
+  bottom:10px !important;
+}
+
+@media(max-width:1180px){
+  section.hero .portrait-wrap{
+    --hero-photo-w:365px; --hero-photo-h:486px; --hero-ring:305px; --hero-ring-top:158px;
+    width:450px !important; height:500px !important;
+  }
+}
+
+@media(max-width:900px){
+  section.hero .portrait-wrap{
+    --hero-photo-w:315px; --hero-photo-h:420px; --hero-ring:264px; --hero-ring-top:136px;
+    width:390px !important; height:432px !important; margin:0 auto !important;
+  }
+  section.hero .float-card{right:-2px !important;bottom:5px !important}
+}
+
+@media(max-width:580px){
+  section.hero .portrait-wrap{
+    --hero-photo-w:270px; --hero-photo-h:360px; --hero-ring:225px; --hero-ring-top:118px;
+    width:min(330px,94vw) !important; height:375px !important;
+  }
+  section.hero .float-card{right:0 !important;bottom:0 !important}
+}
+
+/* ========================================================================
+   FINAL HERO PORTRAIT — approved shorter real-photo crop
+   Exact supplied portrait, clean transparent edge, no stretching/no seam.
+   The image is anchored lower in the hero and only scaled to the space that
+   naturally fits. Decorative rings stay behind the torso, not around the head.
+   ======================================================================== */
+section.hero .portrait-wrap{
+  --hero-photo-w: 352px;
+  --hero-ring: 316px;
+  position:relative !important;
+  width:470px !important;
+  height:525px !important;
+  overflow:visible !important;
+  background:none !important;
+  align-self:end !important;
+}
+
+section.hero .portrait.hero-portrait-single{
+  position:absolute !important;
+  left:50% !important;
+  top:auto !important;
+  bottom:-4px !important;
+  width:var(--hero-photo-w) !important;
+  height:auto !important;
+  aspect-ratio:auto !important;
+  transform:translateX(-50%) !important;
+  overflow:visible !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  margin:0 !important;
+  z-index:4 !important;
+}
+
+section.hero .portrait-single-img{
+  position:relative !important;
+  inset:auto !important;
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  max-width:none !important;
+  object-fit:contain !important;
+  object-position:center bottom !important;
+  background:transparent !important;
+  filter:none !important;
+  image-rendering:auto !important;
+}
+
+/* Torso-centred ring: intentionally lower than the head. */
+section.hero .portrait-wrap::before{
+  content:"" !important;
+  position:absolute !important;
+  left:51% !important;
+  top:184px !important;
+  width:var(--hero-ring) !important;
+  height:var(--hero-ring) !important;
+  transform:translateX(-50%) !important;
+  border-radius:50% !important;
+  border:1px solid rgba(104,225,190,.34) !important;
+  background:radial-gradient(circle at 50% 52%,rgba(104,225,190,.12),rgba(104,225,190,.035) 58%,transparent 59%) !important;
+  box-shadow:0 0 0 20px rgba(104,225,190,.025),inset 0 0 55px rgba(104,225,190,.035) !important;
+  z-index:1 !important;
+  pointer-events:none !important;
+}
+section.hero .portrait-wrap::after{
+  content:"" !important;
+  position:absolute !important;
+  left:51% !important;
+  top:174px !important;
+  width:calc(var(--hero-ring) + 20px) !important;
+  height:calc(var(--hero-ring) + 20px) !important;
+  transform:translateX(-50%) !important;
+  border-radius:50% !important;
+  border:1px solid rgba(104,225,190,.14) !important;
+  background:transparent !important;
+  z-index:0 !important;
+  pointer-events:none !important;
+}
+
+html[data-theme="dark"] section.hero .portrait-wrap::before{
+  border-color:rgba(104,225,190,.38) !important;
+}
+html[data-theme="dark"] section.hero .portrait-wrap::after{
+  border-color:rgba(104,225,190,.16) !important;
+}
+
+section.hero .float-card{
+  z-index:8 !important;
+  right:-12px !important;
+  bottom:22px !important;
+}
+
+@media(max-width:1180px){
+  section.hero .portrait-wrap{--hero-photo-w:326px;--hero-ring:292px;width:430px !important;height:485px !important}
+  section.hero .portrait-wrap::before{top:174px !important}
+  section.hero .portrait-wrap::after{top:164px !important}
+  section.hero .float-card{right:-4px !important;bottom:18px !important}
+}
+
+@media(max-width:900px){
+  section.hero .portrait-wrap{--hero-photo-w:286px;--hero-ring:254px;order:-1 !important;width:370px !important;height:430px !important;margin:0 auto !important}
+  section.hero .portrait-wrap::before{left:50% !important;top:154px !important}
+  section.hero .portrait-wrap::after{left:50% !important;top:145px !important}
+  section.hero .float-card{right:0 !important;bottom:10px !important}
+}
+
+@media(max-width:580px){
+  section.hero .portrait-wrap{--hero-photo-w:250px;--hero-ring:220px;width:min(320px,94vw) !important;height:382px !important}
+  section.hero .portrait-wrap::before{left:50% !important;top:139px !important}
+  section.hero .portrait-wrap::after{left:50% !important;top:131px !important}
+  section.hero .float-card{right:0 !important;bottom:4px !important;max-width:min(270px,84vw) !important}
+}
+
+
+/* =======================================================================
+   FINAL REAL HERO PORTRAIT — exact supplied photo
+   Keeps the existing portrait scale, moves it down, and crops ONLY the
+   bottom so the hijab/head remain fully visible and clean.
+   ======================================================================= */
+
+section.hero .portrait-wrap{
+  position:relative !important;
+  width:470px !important;
+  height:525px !important;
+  margin-left:auto !important;
+  align-self:end !important;
+  overflow:visible !important;
+  background:transparent !important;
+}
+
+/* The viewport for the real portrait. Top remains visible; only bottom crops. */
+section.hero .portrait.hero-portrait-single{
+  position:absolute !important;
+  left:50% !important;
+  top:18px !important;
+  bottom:auto !important;
+  width:352px !important;
+  height:492px !important;
+  transform:translateX(-50%) !important;
+  overflow:hidden !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  margin:0 !important;
+  z-index:4 !important;
+}
+
+/* Exact supplied real image — no generation, no stretching. */
+section.hero .portrait-single-img{
+  position:absolute !important;
+  left:0 !important;
+  top:0 !important;
+  width:352px !important;
+  height:auto !important;
+  max-width:none !important;
+  max-height:none !important;
+  object-fit:contain !important;
+  object-position:center top !important;
+  transform:none !important;
+  background:transparent !important;
+  filter:none !important;
+  image-rendering:auto !important;
+  -webkit-backface-visibility:hidden;
+  backface-visibility:hidden;
+}
+
+/* Decorative ring stays behind the torso/lower portrait. */
+section.hero .portrait-wrap::before{
+  content:"" !important;
+  position:absolute !important;
+  left:51% !important;
+  top:185px !important;
+  width:316px !important;
+  height:316px !important;
+  transform:translateX(-50%) !important;
+  border-radius:50% !important;
+  border:1px solid rgba(104,225,190,.36) !important;
+  background:
+    radial-gradient(circle at 50% 50%,
+      rgba(104,225,190,.12),
+      rgba(104,225,190,.04) 58%,
+      transparent 59%) !important;
+  box-shadow:
+    0 0 0 18px rgba(104,225,190,.025),
+    inset 0 0 52px rgba(104,225,190,.035) !important;
+  z-index:1 !important;
+  pointer-events:none !important;
+}
+
+section.hero .portrait-wrap::after{
+  content:"" !important;
+  position:absolute !important;
+  left:51% !important;
+  top:175px !important;
+  width:336px !important;
+  height:336px !important;
+  transform:translateX(-50%) !important;
+  border-radius:50% !important;
+  border:1px solid rgba(104,225,190,.15) !important;
+  background:transparent !important;
+  z-index:0 !important;
+  pointer-events:none !important;
+}
+
+section.hero .float-card{
+  position:absolute !important;
+  right:-12px !important;
+  bottom:22px !important;
+  z-index:8 !important;
+}
+
+/* Tablet */
+@media (max-width:1180px){
+  section.hero .portrait-wrap{
+    width:430px !important;
+    height:485px !important;
+  }
+
+  section.hero .portrait.hero-portrait-single{
+    top:18px !important;
+    width:326px !important;
+    height:452px !important;
+  }
+
+  section.hero .portrait-single-img{
+    width:326px !important;
+  }
+
+  section.hero .portrait-wrap::before{
+    width:292px !important;
+    height:292px !important;
+    top:171px !important;
+  }
+
+  section.hero .portrait-wrap::after{
+    width:310px !important;
+    height:310px !important;
+    top:162px !important;
+  }
+
+  section.hero .float-card{
+    right:-4px !important;
+    bottom:18px !important;
+  }
+}
+
+/* Mobile / tablet portrait layout */
+@media (max-width:900px){
+  section.hero .portrait-wrap{
+    order:-1 !important;
+    width:370px !important;
+    max-width:94vw !important;
+    height:425px !important;
+    margin:0 auto 20px !important;
+  }
+
+  section.hero .portrait.hero-portrait-single{
+    top:16px !important;
+    width:286px !important;
+    height:392px !important;
+  }
+
+  section.hero .portrait-single-img{
+    width:286px !important;
+  }
+
+  section.hero .portrait-wrap::before{
+    left:50% !important;
+    width:254px !important;
+    height:254px !important;
+    top:145px !important;
+  }
+
+  section.hero .portrait-wrap::after{
+    left:50% !important;
+    width:270px !important;
+    height:270px !important;
+    top:137px !important;
+  }
+
+  section.hero .float-card{
+    right:0 !important;
+    bottom:8px !important;
+  }
+}
+
+/* Small phones */
+@media (max-width:580px){
+  section.hero .portrait-wrap{
+    width:min(320px,94vw) !important;
+    height:372px !important;
+  }
+
+  section.hero .portrait.hero-portrait-single{
+    top:14px !important;
+    width:250px !important;
+    height:340px !important;
+  }
+
+  section.hero .portrait-single-img{
+    width:250px !important;
+  }
+
+  section.hero .portrait-wrap::before{
+    width:220px !important;
+    height:220px !important;
+    top:126px !important;
+  }
+
+  section.hero .portrait-wrap::after{
+    width:234px !important;
+    height:234px !important;
+    top:119px !important;
+  }
+
+  section.hero .float-card{
+    right:0 !important;
+    bottom:4px !important;
+    max-width:min(270px,84vw) !important;
+  }
+}
